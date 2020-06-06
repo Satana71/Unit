@@ -1,0 +1,578 @@
+*{
+    padding: 0;
+    margin: 0 auto;
+    scroll-behavior: smooth;
+}
+:root{
+    --boxclr: rgb(231, 231, 231);
+    --fnttext: 'Open Sans', sans-serif;
+    --txtclr: grey;
+}
+p, h2, ul, li{
+    font-family: var(--fnttext);
+}
+.headdress{
+    width: 100%;
+    height: 500px;
+}
+/* текст шапки */
+.preview{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-prev{
+    padding: 3rem;
+    display: flex;
+    max-width: 30%;
+    text-align: center;
+}
+/* иконки (видео, инструкция) */
+.boxing{
+    display: flex;
+    justify-content: space-around;
+}
+.card-box{
+    text-align: center;
+}
+.cardinfo{
+    padding-top: 1rem;
+    font-size: 18px;
+    color: var(--txtclr);
+}
+.box-left{
+    border-radius: 80px;
+    height: 10rem;
+    width: 20rem;
+    background-color:var(--boxclr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-right{
+    border-radius: 80px;
+    height: 10rem;
+    width: 20rem;
+    background-color:var(--boxclr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* размеры иконок */
+.icontitle{
+    width: 280px;
+    height: 120px;
+}
+
+/* команда */
+.teampage{
+    width: 100%;
+    height: 848px;
+    background-position: fixed !important;
+    background: url(img/bcgfon.png);
+    background-size: 100% 100%;
+    text-align: center;
+    background-repeat: no-repeat;
+    display: table;
+}
+/* босс и инфа о нас */
+.upteam{
+    width: 90%;
+    height: 400px;
+    display: flex;
+    margin-top: 3rem;
+    z-index: 2;
+}
+.teamunit{
+    padding-top: 1rem;
+    text-align: left;
+    width: 180px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.boss{
+    filter: grayscale(100%);
+    width: 390px;
+    height: 500px;
+}
+.upright{
+    padding-top: 1rem;
+    text-align: left;
+}
+.downright{
+    padding: 1rem;
+    color: var(--txtclr);
+    display: flex;
+}
+/* список мероприятий */
+.experunitboss{
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+.experunit{
+    padding: 3rem 0 0 3rem;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+.list{
+    padding-right: 3rem;
+    text-align: left;
+    max-width: 15rem;
+}
+.speaker{
+    margin-left: -1rem ;
+}
+.listbio{
+    padding-top: 1rem;
+}
+/* список обучения */
+.listless{
+    line-height: 2rem;
+}
+.K50{
+    font-size: 30px;
+    color: red;
+    font-weight: bold;
+}
+.exples{
+    padding-top: 2rem;
+}
+.imgtraining{
+    width: 110px;
+    height: 50px;
+}
+.teammetods{
+    width: 80%;
+    height: 300px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, var(--boxclr) 45%, rgba(216, 216, 216, 0.198));
+    display: flex;
+    z-index: 1;
+    position: relative;
+}
+.imgteam{
+    width: 36rem;
+    height: 25rem;
+}
+.table{
+    width: 50%;
+    height: 1rem;
+}
+.tableunit{
+    color: var(--txtclr);
+    text-align: left;
+    width: 90%;
+    padding: 1rem;
+    line-height: 3rem;
+    list-style-position: inside;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    height: 250px;
+}
+li{
+    padding-left: 1rem;
+}
+
+/* команда */
+/* модальное окно */
+body {font-family: var(--fnttext);
+    font-size:15px;
+}  
+    .link {color:#fff; text-decoration:none}
+    .link:hover {color:#fff; text-decoration:underline
+}  
+#mask {
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:9000;
+    background-color:#000;
+    display:none;
+}
+#boxes .window {
+    position: fixed;
+    left:0;
+    top: 140px;
+    width:800px;
+    height:800px;
+    display:none;
+    z-index:9999;
+    padding: 20px;
+    overflow: hidden;
+}  
+#boxes #dialog {
+    width:850px; 
+    height:500px;
+    padding:10px;
+}  
+.top {
+    left: 3rem;
+    top: 0;
+    width:90%;
+    height:30px;
+    padding: 8px 20px 6px 10px;
+}
+.close {
+    float:right;
+}
+.content {
+    display: flex;
+
+}
+.modalwind{
+    position: absolute;
+    border-radius: 15px;
+    width: 800px;
+    height: 400px;
+    z-index: 1;
+}
+.modaltext{
+    color: white;
+    width: 40%;
+    position: relative;
+    padding-top: 5rem;
+    z-index: 2;
+    font-family: var(--fnttext);
+}
+.modalp{
+    margin-top: 1rem;
+    color: var(--txtclr);
+}
+.timeup{
+    margin-top: 2rem;
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+    cursor: pointer;
+    color: blue;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.507);
+    font-family: var(--fnttext);
+}
+.next{
+    margin-left: 2rem;
+    border: none; 
+    outline: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    font-family: var(--fnttext);
+}
+.cross{
+    filter: invert(100%);
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/* адаптив */
+/* телефоны */
+@media (min-width: 0px) and (max-width: 479px){
+    .headdress{
+        height: 100%;
+    }
+    .text-prev{
+        text-align: center;
+        max-width: 100%;
+    }
+    .boxing{
+        display: inline;
+    }
+    .card-box{
+        padding: 2rem;
+    }
+    .teamunit{
+        width: 90%;
+        text-align: center;
+    }
+    .experunit, .experunitboss{
+        padding: 1rem;
+        text-align: center;
+    }
+    .teampage{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+    .upteam{
+        display: inline;
+    }
+    .downright{
+        align-items: center;
+        display: inline;
+        text-align: center;
+    }
+    .upright{
+        top: -20rem;
+        position: a;
+    }
+    .list{
+        padding: 0 0 0 6rem;
+        align-items: center;
+    }
+    .listless{
+        padding-top: 3rem;
+    }
+    .teammetods{
+        display: inline-block;
+        height: 800px;
+        background-image: linear-gradient(to bottom, var(--boxclr) 45%, rgba(216, 216, 216, 0.198));
+    }
+    .table{
+        width: 80%;
+    }
+    .tableunit{
+        column-count: 1;
+        line-height: 1rem;
+        height: 400px;
+    }
+    .tabletext{
+        padding-top: 3rem;
+    }
+    .imgteam{
+        width: 25rem;
+        height: 16rem;
+        padding-top: 35rem;
+        margin-left: -3rem;
+    }
+    /* модальное окно */
+    body {font-family: var(--fnttext);
+        font-size:15px;
+    }  
+        .link {color:#fff; text-decoration:none}
+        .link:hover {color:#fff; text-decoration:underline
+    }  
+    #mask {
+        position:absolute;
+        left:0;
+        top:0;
+        z-index:9000;
+        background-color:#000;
+        display:none;
+    }
+    #boxes .window {
+        position: fixed;
+        left:0;
+        top: 140px;
+        width:100%;
+        height:100%;
+        display:none;
+        z-index:9999;
+        padding: 20px;
+        overflow: hidden;
+    }  
+    #boxes #dialog {
+        width:100%; 
+        height:100%;
+        padding:10px;
+    }  
+    .top {
+        left: 3rem;
+        top: 0;
+        width:90%;
+        height:30px;
+        padding: 8px 20px 6px 10px;
+    }
+    .close {
+        float:right;
+    }
+    .content {
+        display: flex;
+    }
+    .modalwind{
+        position: absolute;
+        border-radius: 15px;
+        width: 400px;
+        height: 300px;
+        z-index: 1;
+    }
+    .modaltext{
+        color: white;
+        width: 40%;
+        position: relative;
+        padding-top: 1rem;
+        z-index: 2;
+        font-family: var(--fnttext);
+        font-size: 10px;
+    }
+    .modalp{
+        margin-top: 1rem;
+        color: var(--txtclr);
+    }
+    .timeup{
+        margin-top: 2rem;
+        width: 150px;
+        height: 30px;
+        border-radius: 30px;
+        cursor: pointer;
+        color: blue;
+        font-weight: bold;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.507);
+        font-family: var(--fnttext);
+        font-size: 10px;
+    }
+    .next{
+        padding-top: 1rem;
+        margin-left: 2rem;
+        border: none; 
+        outline: none;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        font-family: var(--fnttext);
+    }
+    .cross{
+        filter: invert(100%);
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* планшеты */
+@media (min-width: 480px) and (max-width: 1000px){
+    .headdress{
+        height: 100%;
+    }
+    .text-prev{
+        text-align: center;
+        max-width: 100%;
+    }
+    .boxing{
+        display: inline;
+    }
+    .card-box{
+        padding: 2rem;
+    }
+    .teamunit{
+        width: 90%;
+        text-align: center;
+    }
+    .experunit, .experunitboss{
+        padding: 1rem;
+        text-align: center;
+    }
+    .teampage{
+        display: inline-block;
+        width: 100%;
+        height: 20%;
+    }
+    .upteam{
+        display: inline;
+    }
+    .downright{
+        align-items: center;
+        display: inline;
+        text-align: center;
+    }
+    .upright{
+        top: -20rem;
+        position: a;
+    }
+    .list{
+        padding: 0 0 0 6rem;
+        align-items: center;
+    }
+    .listless{
+        padding-top: 3rem;
+    }
+    .teammetods{
+        display: inline-block;
+        height: 500px;
+        background-image: linear-gradient(to bottom, var(--boxclr) 45%, rgba(216, 216, 216, 0.198));
+    }
+    .table{
+        width: 80%;
+    }
+    .tableunit{
+        column-count: 2;
+        line-height: 1rem;
+        height: 400px;
+    }
+    .tabletext{
+        padding-top: 3rem;
+    }
+    .imgteam{
+        width: 25rem;
+        height: 16rem;
+        padding-top: 19rem;
+        margin-left: -3rem;
+    }
+}
+/* планшеты */
+@media (min-width: 1001px) and (max-width: 1250px){
+    .headdress{
+        height: 100%;
+    }
+    .text-prev{
+        text-align: center;
+        max-width: 100%;
+    }
+    .boxing{
+        height: 400px;
+        /* display: inline; */
+    }
+    .card-box{
+        padding: 2rem;
+    }
+    .teamunit{
+        width: 20%;
+        text-align: center;
+    }
+    .experunit, .experunitboss{
+        padding: 1rem;
+        text-align: center;
+    }
+    .teampage{
+        display: inline-block;
+        width: 100%;
+        height: 30%;
+    }
+    .downright{
+        display: flex;
+        text-align: center;
+    }
+    .upright{
+        top: -20rem;
+        position: a;
+    }
+    .list{
+        align-items: center;
+    }
+    .K50{
+        padding-top: 1rem;
+    }
+    .listless{
+        line-height: 1rem;
+    }
+    .imgtraining{
+        padding-top: 1rem;
+    }
+    .downteam{
+        padding-top: 5rem;
+    }
+    .teammetods{
+        display: flex;
+        height: 400px;
+        background-image: linear-gradient(to right, var(--boxclr) 60%, rgba(216, 216, 216, 0.198));
+    }
+    .table{
+        width: 80%;
+    }
+    .tableunit{
+        column-count: 2;
+        line-height: 1.5rem;
+        height: 300px;
+    }
+    .tabletext{
+        padding-top: 0.5rem;
+    }
+    .imgteam{
+        width: 35rem;
+        height: 21rem;
+        padding-top: 4rem;
+    }
+}
